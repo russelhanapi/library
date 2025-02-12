@@ -1,5 +1,7 @@
 'use strict';
 
+const containerBooks = document.querySelector('.books');
+
 const booksArr = [];
 
 const Book = function (title, author, page) {
@@ -28,6 +30,34 @@ addBookToLibrary('Refactoring', 'Martin Fowler', 448);
 console.table(booksArr);
 
 // Function for rendering the books in the library (i.e. populating the library with books)
-const renderBooks = function () {};
+const renderBooks = function () {
+  booksArr.forEach(function (book) {
+    const html = `<div class="book">
+        <div class="book-info">
+            <p class="book-title">${book.title}</p>
+            <p class="book-author">${book.author}</p>
+            <p class="book-page">${book.page} pages</p>
+        </div>
+        <div class="book-btn-utils">
+            <button
+            class="btn-util btn-toggle-read-status"
+            aria-label="read status"
+            title="Read Status"
+            >
+            <ion-icon name="book-outline" class="icon"></ion-icon>
+            </button>
+            <button
+            class="btn-util btn-delete-book"
+            aria-label="delete book"
+            title="Delete Book"
+            >
+            <ion-icon name="trash-outline" class="icon"></ion-icon>
+            </button>
+        </div>
+        </div>
+    </div>`;
+    containerBooks.insertAdjacentHTML('afterbegin', html);
+  });
+};
 
 renderBooks();
