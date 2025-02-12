@@ -25,4 +25,9 @@ addBookToLibrary('Design Patterns', 'Erich Gamma et al.', 416);
 addBookToLibrary('The Lean Startup', 'Eric Ries', 336);
 addBookToLibrary('Refactoring', 'Martin Fowler', 448);
 
-console.log(booksArr);
+console.table(booksArr);
+
+// Function for rendering the books in the library (i.e. populating the library with books)
+const renderBooks = function () {};
+
+renderBooks();

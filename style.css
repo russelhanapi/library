@@ -1,0 +1,138 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  /* 10px/16px = 0.625 = 62.5% */
+  /* Percentage of user's browser font-size setting */
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: #3f4f44;
+}
+
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 6rem 2rem;
+}
+
+.books {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-auto-rows: 24rem;
+  gap: 3.2rem;
+}
+
+.book {
+  background-color: #dcd7c9;
+  border-left: 1.2rem solid #a27b5c;
+  border-radius: 6px;
+  padding: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.book-title {
+  color: #2c3930;
+  font-family: 'Merriweather', sans-serif;
+  font-weight: 600;
+  font-size: 1.8rem;
+  margin-bottom: 0.4rem;
+}
+
+.book-author {
+  color: #2c3930;
+  font-family: 'Merriweather', sans-serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.4rem;
+  margin-bottom: 0.6rem;
+}
+
+.book-page {
+  color: #2c3930;
+  font-family: 'Merriweather', sans-serif;
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+.btn-util,
+.btn-add-book {
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.book-btn-utils {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  align-self: flex-end;
+}
+
+.btn-util {
+  padding: 1rem;
+}
+
+.btn-util .icon {
+  height: 2rem;
+  width: 2rem;
+  color: #dcd7c9;
+}
+
+.btn-toggle-read-status {
+  box-shadow: inset 0 0 0 2px #099268;
+  background-color: #dcd7c9;
+}
+
+.btn-toggle-read-status .icon {
+  color: #099268;
+}
+
+.btn-toggle-read-status.read {
+  background-color: #099268;
+  color: #099268;
+}
+
+.btn-toggle-read-status.read .icon {
+  color: #dcd7c9;
+}
+
+.btn-delete-book {
+  background-color: #e03131;
+}
+
+.btn-add-book {
+  padding: 1.2rem;
+  background-color: #a27b5c;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+
+  position: fixed;
+  bottom: 4.8rem;
+  right: 4.8rem;
+}
+
+.btn-add-book .icon {
+  height: 4.8rem;
+  width: 4.8rem;
+  color: #beb7a3;
+}
+
+.btn-add-book:hover {
+  background-color: #8f6b4d;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
