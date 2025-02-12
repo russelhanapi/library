@@ -13,6 +13,8 @@ html {
 
 body {
   background-color: #3f4f44;
+  font-family: 'Merriweather', sans-serif;
+  color: #2c3930;
 }
 
 .container {
@@ -135,4 +137,85 @@ body {
   background-color: #8f6b4d;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
     rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.modal {
+  background-color: #dcd7c9;
+  margin: auto;
+  width: 40rem;
+  padding: 2.4rem;
+  border-radius: 6px;
+  border: none;
+}
+
+.modal::backdrop {
+  background-color: #121a14b6;
+}
+
+.modal-form-heading {
+  color: #2c3930;
+  font-size: 2.2rem;
+  text-align: center;
+  margin: 1.4rem 0 1.6rem 0;
+}
+
+.book-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.book-form input,
+.book-form select {
+  padding: 2px 4px;
+  color: #3f4f44;
+  width: 100%;
+  height: 3.2rem;
+  border-radius: 4px;
+  border: none;
+  font-family: 'Merriweather', sans-serif;
+}
+
+.book-form label {
+  display: block;
+  margin-bottom: 0.6rem;
+  font-size: 1.6rem;
+  color: #2c3930;
+}
+
+.modal-buttons-container {
+  margin-top: 1.8rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 1.2rem;
+}
+
+.btn-form-cancel,
+.btn-form-submit {
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  font-family: 'Merriweather', sans-serif;
+  cursor: pointer;
+  font-size: 1.6rem;
+  height: 4.2rem;
+  transition: 0.3s;
+}
+
+.btn-form-submit {
+  background-color: #a27b5c;
+  color: #dcd7c9;
+}
+
+.btn-form-submit:hover {
+  background-color: #8f6b4d;
+}
+
+.btn-form-cancel {
+  background-color: transparent;
+  color: #a27b5c;
+}
+
+.btn-form-cancel:hover {
+  color: #8f6b4d;
 }

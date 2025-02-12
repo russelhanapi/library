@@ -24,6 +24,36 @@
       <ion-icon name="add-outline" class="icon"></ion-icon>
     </button>
 
+    <dialog class="modal">
+      <h2 class="modal-form-heading">Add a Book</h2>
+      <form class="book-form">
+        <div>
+          <label for="book-title">Title</label
+          ><input type="text" id="book-title" name="book-title" required />
+        </div>
+        <div>
+          <label for="book-author">Author</label
+          ><input type="text" id="book-author" name="book-author" required />
+        </div>
+        <div>
+          <label for="book-page">Page/s</label
+          ><input type="number" id="book-page" name="book-page" required />
+        </div>
+        <div>
+          <label for="book-read-status">Status</label>
+          <select name="book-read-status" id="book-read-status" required>
+            <!-- <option value="">-- Reading Status --</option> -->
+            <option value="in-progress">In Progress</option>
+            <option value="done">Done</option>
+          </select>
+        </div>
+        <div class="modal-buttons-container">
+          <button class="btn-form-cancel">Cancel</button>
+          <button class="btn-form-submit" type="submit">Submit</button>
+        </div>
+      </form>
+    </dialog>
+
     <script
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"

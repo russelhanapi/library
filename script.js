@@ -1,6 +1,10 @@
 'use strict';
 
 const containerBooks = document.querySelector('.books');
+const btnAddBook = document.querySelector('.btn-add-book');
+const modal = document.querySelector('.modal');
+const btnFormCancel = document.querySelector('.btn-form-cancel');
+const btnFormSubmit = document.querySelector('.btn-form-submit');
 
 const booksArr = [];
 
@@ -32,7 +36,8 @@ console.table(booksArr);
 // Function for rendering the books in the library (i.e. populating the library with books)
 const renderBooks = function () {
   booksArr.forEach(function (book) {
-    const html = `<div class="book">
+    const html = `
+    <div class="book">
         <div class="book-info">
             <p class="book-title">${book.title}</p>
             <p class="book-author">${book.author}</p>
@@ -54,10 +59,12 @@ const renderBooks = function () {
             <ion-icon name="trash-outline" class="icon"></ion-icon>
             </button>
         </div>
-        </div>
     </div>`;
     containerBooks.insertAdjacentHTML('afterbegin', html);
   });
 };
 
 renderBooks();
+
+btnAddBook.addEventListener('click', () => modal.showModal());
+btnFormCancel.addEventListener('click', () => modal.close());
