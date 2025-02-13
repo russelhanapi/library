@@ -2,7 +2,6 @@
 
 const containerBooks = document.querySelector('.books');
 const btnAddBook = document.querySelector('.btn-add-book');
-
 const modal = document.querySelector('.modal');
 const formAddBook = document.querySelector('.book-form');
 const inputBookTitle = document.querySelector('#book-title');
@@ -31,9 +30,9 @@ const addBookToLibrary = function (title, author, page, status) {
 // Function for rendering the books in the library (i.e. populating the library with books)
 const renderBooks = function () {
   containerBooks.innerHTML = ''; // Clears the container before rendering
-  booksArr.forEach(function (book) {
+  booksArr.forEach(function (book, index) {
     const html = `
-    <div class="book">
+    <div class="book" data-index="${index}">
         <div class="book-info">
             <p class="book-title">${book.title}</p>
             <p class="book-author">${book.author}</p>
@@ -62,6 +61,24 @@ const renderBooks = function () {
   });
 };
 
+// Function to delete a book from the array based on its index
+const deleteBook = function (bookIndex) {
+  booksArr.splice(bookIndex, 1);
+  renderBooks();
+};
+
+// Function to handle events for each book (toggle read status or delete)
+const handleBtnUtilAction = function (e) {
+  const book = e.target.closest('.book');
+  if (!book) return;
+
+  const bookIndex = book.dataset.index;
+  if (bookIndex === undefined) return;
+
+  if (e.target.closest('.btn-delete-book')) deleteBook(bookIndex);
+};
+
+containerBooks.addEventListener('click', handleBtnUtilAction);
 btnAddBook.addEventListener('click', () => modal.showModal());
 btnFormCancel.addEventListener('click', () => modal.close());
 
@@ -86,7 +103,7 @@ formAddBook.addEventListener('submit', function (e) {
   selectBookReadStatus.selectedIndex = 0;
 });
 
-// addBookToLibrary('Atomic Habits', 'James Clear', 320, 'done');
+addBookToLibrary('Atomic Habits', 'James Clear', 320, 'done');
 // addBookToLibrary(
 //   'The Pragmatic Programmer',
 //   'Andrew Hunt & David Thomas',
