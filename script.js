@@ -8,11 +8,56 @@ const inputBookTitle = document.querySelector('#book-title');
 const inputBookAuthor = document.querySelector('#book-author');
 const inputBookPage = document.querySelector('#book-page');
 const selectBookReadStatus = document.querySelector('#book-read-status');
-
 const btnFormCancel = document.querySelector('.btn-form-cancel');
 const btnFormSubmit = document.querySelector('.btn-form-submit');
 
-const booksArr = [];
+const booksArr = [
+  { title: 'Atomic Habits', author: 'James Clear', page: 320, status: 'done' },
+  {
+    title: 'The Pragmatic Programmer',
+    author: 'Andrew Hunt & David Thomas',
+    page: 352,
+    status: 'in-progress',
+  },
+  {
+    title: 'Clean Code',
+    author: 'Robert C. Martin',
+    page: 464,
+    status: 'in-progress',
+  },
+  { title: 'Deep Work', author: 'Cal Newport', page: 304, status: 'done' },
+  {
+    title: 'You Don’t Know JS',
+    author: 'Kyle Simpson',
+    page: 278,
+    status: 'in-progress',
+  },
+  {
+    title: 'The Psychology of Money',
+    author: 'Morgan Housel',
+    page: 256,
+    status: 'in-progress',
+  },
+  {
+    title: 'Eloquent JavaScript',
+    author: 'Marijn Haverbeke',
+    page: 472,
+    status: 'done',
+  },
+  {
+    title: 'Design Patterns',
+    author: 'Erich Gamma et al.',
+    page: 416,
+    status: 'in-progress',
+  },
+  { title: 'The Lean Startup', author: 'Eric Ries', page: 336, status: 'done' },
+  {
+    title: 'Refactoring',
+    author: 'Martin Fowler',
+    page: 448,
+    status: 'in-progress',
+  },
+];
 
 const Book = function (title, author, page, status) {
   this.title = title;
@@ -108,26 +153,4 @@ formAddBook.addEventListener('submit', function (e) {
   this.reset();
 });
 
-addBookToLibrary('Atomic Habits', 'James Clear', 320, 'done');
-// addBookToLibrary(
-//   'The Pragmatic Programmer',
-//   'Andrew Hunt & David Thomas',
-//   352,
-//   'in-progress'
-// );
-// addBookToLibrary('Clean Code', 'Robert C. Martin', 464, 'in-progress');
-// addBookToLibrary('Deep Work', 'Cal Newport', 304, 'done');
-// addBookToLibrary('You Don’t Know JS', 'Kyle Simpson', 278);
-// addBookToLibrary(
-//   'The Psychology of Money',
-//   'Morgan Housel',
-//   256,
-//   'in-progress'
-// );
-// addBookToLibrary('Eloquent JavaScript', 'Marijn Haverbeke', 472, 'done');
-// addBookToLibrary('Design Patterns', 'Erich Gamma et al.', 416, 'in-progress');
-// addBookToLibrary('The Lean Startup', 'Eric Ries', 336, 'done');
-// addBookToLibrary('Refactoring', 'Martin Fowler', 448, 'in-progress');
-
-// console.table(booksArr);
 renderBooks();
