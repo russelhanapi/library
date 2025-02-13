@@ -105,10 +105,7 @@ formAddBook.addEventListener('submit', function (e) {
   modal.close(); // Closes the modal after successful submission
 
   // Clears the form fields to reset for the next input
-  inputBookTitle.value = '';
-  inputBookPage.value = '';
-  inputBookAuthor.value = '';
-  selectBookReadStatus.selectedIndex = 0;
+  this.reset();
 });
 
 addBookToLibrary('Atomic Habits', 'James Clear', 320, 'done');
