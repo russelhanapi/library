@@ -67,6 +67,13 @@ const deleteBook = function (bookIndex) {
   renderBooks();
 };
 
+// Function to toggle the read status of a book based on its index
+const toggleReadStatus = function (bookIndex) {
+  const book = booksArr[bookIndex];
+  book.status = book.status === 'done' ? 'in-progress' : 'done';
+  renderBooks();
+};
+
 // Function to handle events for each book (toggle read status or delete)
 const handleBtnUtilAction = function (e) {
   const book = e.target.closest('.book');
@@ -76,6 +83,7 @@ const handleBtnUtilAction = function (e) {
   if (bookIndex === undefined) return;
 
   if (e.target.closest('.btn-delete-book')) deleteBook(bookIndex);
+  if (e.target.closest('.btn-toggle-read-status')) toggleReadStatus(bookIndex);
 };
 
 containerBooks.addEventListener('click', handleBtnUtilAction);
