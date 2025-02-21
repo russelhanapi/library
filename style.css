@@ -135,8 +135,7 @@ body {
 
 .btn-add-book:hover {
   background-color: #8f6b4d;
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
-    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 
 .modal {
@@ -174,6 +173,11 @@ body {
   border-radius: 4px;
   border: none;
   font-family: 'Merriweather', sans-serif;
+}
+
+.book-form input:valid,
+.book-form select:valid {
+  border: 2px solid green;
 }
 
 .book-form label {
